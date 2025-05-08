@@ -11,7 +11,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(
     cors({
-        origin:"http://localhost:5173",
+        origin:"https://dreamscape-k73r.onrender.com",
         credentials:true
     })
 )
@@ -21,6 +21,6 @@ app.use('/api/images', imageRoutes);
 app.use('/api/messages',messageRoutes)
 connectDB()
 
-app.listen(4000,"localhost",()=>{
+app.listen(ENV_VARS.PORT,"0.0.0.0",()=>{
     console.log(`Server started running at 4000 `)
 })
